@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Button } from "./ui/button"
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "./ui/command"
+import { CommandDialog, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "./ui/command"
 import { Clock, Loader2, Search, Star, XCircle } from "lucide-react";
 import { useLocationSearch } from "@/hooks/use-weather";
 import { useNavigate } from "react-router-dom";
@@ -45,17 +45,10 @@ const CitySearch = () => {
         Search cities...
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput 
-         placeholder='search cities'
-         value={query}
-         onValueChange={setQuery}
-        />
-        <CommandList>
-          {query.length > 2 && !isLoading &&
-          (
-            <CommandEmpty>No cities found.</CommandEmpty>
-          )}
 
+        <CommandInput value={query} onValueChange={setQuery}/>
+
+        <CommandList>
           {favorites.length > 0 && (
               <CommandGroup heading='favorites'>
                 {favorites.map((location) => {
