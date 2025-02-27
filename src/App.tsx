@@ -5,7 +5,7 @@ import CityPage from "./pages/city-page"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import { ThemeProvider } from "./context/theme-provider"
 import {QueryClientProvider, QueryClient} from "@tanstack/react-query"
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'sonner'
 
 const queryClient = new QueryClient({
